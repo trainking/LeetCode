@@ -11,10 +11,11 @@ class Solution(object):
         _mas = {}
         j = 0 
         for i in range(len(s)):
-            if _mas.has_key(s[i]):
+            if _mas.has_key(s[i]) and j <= _mas[s[i]]:
                 j = max(j, _mas[s[i]] + 1)
+            else:
+                _max = max(_max, i - j + 1)
             _mas[s[i]] = i
-            _max = max(_max, i - j + 1)
 
         return _max
 
