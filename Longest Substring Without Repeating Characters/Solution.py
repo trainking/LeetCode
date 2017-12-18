@@ -12,7 +12,7 @@ class Solution(object):
         j = 0 
         for i in range(len(s)):
             if _mas.has_key(s[i]) and j <= _mas[s[i]]:
-                j = max(j, _mas[s[i]] + 1)
+                j = _mas[s[i]] + 1
             else:
                 _max = max(_max, i - j + 1)
             _mas[s[i]] = i
@@ -20,7 +20,7 @@ class Solution(object):
         return _max
 
 def main():
-    print Solution().lengthOfLongestSubstring("abcabcbb")
+    print Solution().lengthOfLongestSubstring("tummsdef")
 
 if __name__ == '__main__':
     main() 
