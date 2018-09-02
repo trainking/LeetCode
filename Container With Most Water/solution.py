@@ -7,19 +7,17 @@ class Solution(object):
         :rtype: int
         """
         left = 0
-        right = 1
         l = len(height)
+        right = l - 1
         result = 0
         while left < right:
             h = height[left] if height[left] < height[right] else height[right]
             r = (right - left) * h
             result = result if result > r else r
-            if right == l - 1:
+            if height[left] < height[right]:
                 left += 1
-                if left < l - 2:
-                    right = left + 1
             else:
-                right += 1
+                right -= 1
         return result 
 
 def main():
