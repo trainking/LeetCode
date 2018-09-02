@@ -11,9 +11,10 @@ class Solution(object):
         right = l - 1
         result = 0
         while left < right:
-            h = height[left] if height[left] < height[right] else height[right]
-            r = (right - left) * h
-            result = result if result > r else r
+            # h = height[left] if height[left] < height[right] else height[right]
+            # r = (right - left) * h
+            # result = result if result > r else r
+            result = max(result, (right - left) * min(height[left], height[right]))
             if height[left] < height[right]:
                 left += 1
             else:
