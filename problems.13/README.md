@@ -56,3 +56,23 @@ Input: "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 ```
+
+## 优化解法
+
+```python
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        convert = {'M': 1000,'D': 500 ,'C': 100,'L': 50,'X': 10,'V': 5,'I': 1}
+        sum = 0
+        
+        for i in range(len(s)-1):
+            if convert[s[i]] < convert[s[i + 1]]:
+                sum = sum - convert[s[i]]
+            else:
+                sum = sum + convert[s[i]]
+        return sum + convert[s[-1]]
+```
