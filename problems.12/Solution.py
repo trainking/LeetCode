@@ -8,18 +8,13 @@ class Solution(object):
         """
         m = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
         r = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
-        result = []
-        i  = 0
-        while i < len(m):
-            t = num - m[i]
-            if t > 0 :
-                result.append(r[i])
-                num = t
-            elif t == 0:
-                result.append(r[i])
-                return "".join(result)
-            else:
-                i += 1 
+        result = ""
+        for _m,_r in zip(m, r):
+            result += (num // _m ) * _r
+            num = num % _m
+
+        return result
+
 
 def main():
     print  Solution().intToRoman(3)   # output: "III"
