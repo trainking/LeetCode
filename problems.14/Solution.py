@@ -36,7 +36,7 @@ class Solution(object):
             else:
                 break
         return "".join(result[0:c])
-                
+
 def main():
     print Solution().longestCommonPrefix([])
     print Solution().longestCommonPrefix(["c","acc","ccc"])
