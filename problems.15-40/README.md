@@ -13,7 +13,7 @@
 25. [k个一组翻转链表](problems.25.md)
 26. [删除排序数组中的重复项](problems.26.md)
 27. [移除元素](problems.27.md)
-28. 实现strStr()
+28. [实现strStr()](problems.28.md)
 29. 两数相除
 30. 串联所有单词子串
 31. 下一个排列
